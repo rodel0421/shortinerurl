@@ -1,0 +1,38 @@
+.machine-search{
+	position: absolute;
+	transform: translate(0, 115%);
+	height: 90px;
+	z-index: 2;
+	width: 100%;
+}
+
+.th-icon{
+    width: 50px;
+}
+
+.td-icon{
+    width: 40px;
+}
+
+.view-more-btn{
+    cursor: pointer;
+}
+
+/*MEDIA QUERIES*/
+@media(min-width: 576px){
+
+}
+
+@media(min-width: 768px){
+	.machine-search{
+		transform: translate(50%, 215%);
+		width: 50% !important;
+	}
+}
+
+@media(min-width: 992px){
+}
+
+@media(min-width: 1200px){
+
+}

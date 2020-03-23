@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+git fetch --all
+git reset --hard origin/master
+
+#clear cache
+chmod +x bin/cake
+bin/cake cache clear_all
+
+# migrate database
+bin/cake migrations migrate --connection migrate
+
+composer install
+
+composer dumpautoload -o
+
+bin/cake plugin assets symlink
+
+# set correct perms on this script
+chmod +x ./update
+
+exit

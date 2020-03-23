@@ -1,0 +1,78 @@
+{
+    "name": "cakephp/app",
+    "description": "CakePHP skeleton app",
+    "homepage": "http://cakephp.org",
+    "type": "project",
+    "license": "MIT",
+    "repositories": [
+        {
+            "type": "git",
+            "url":  "git@git.daktech.com.au:dak/AdminLTE.git"
+        },
+        {
+            "type": "git",
+            "url":  "git@git.daktech.com.au:dak/daktech-cake3-utilities.git"
+        },
+        {
+            "type": "git",
+            "url":  "git@git.daktech.com.au:dak/CakePHP3-HtmlPurifier.git"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/support": "5.4",
+        "illuminate/contracts": "5.4",
+        "doctrine/inflector": "1.1",
+        "cakephp/cakephp": "3.4.*",
+        "mobiledetect/mobiledetectlib": "2.*",
+        "cakephp/migrations": "~1.0",
+        "cakephp/plugin-installer": "*",
+        "adldap2/adldap2": "7.0.15",
+        "holt59/cakephp3-bootstrap-helpers": "~3.0",
+        "daktech/adminlte":"1.1.0",
+        "daktech/utility":"1.0.2",
+        "josegonzalez/cakephp-upload": "~3.6",
+        "admad/cakephp-sequence": "^2.0",
+        "chrisshick/cakephp3-html-purifier": "1.0.1",
+        "friendsofcake/cakepdf": "^3.2",
+        "iio/libmergepdf": "^3.1",
+        "friendsofcake/cakephp-csvview": "~3.0",
+        "phpmailer/phpmailer": "^6.0",
+        "google/apiclient": "^2.0"
+    },
+    "require-dev": {
+        "psy/psysh": "@stable",
+        "cakephp/debug_kit": "~3.2",
+        "cakephp/bake": "~1.1"
+    },
+    "suggest": {
+        "markstory/asset_compress": "An asset compression plugin which provides file concatenation and a flexible filter system for preprocessing and minification.",
+        "phpunit/phpunit": "Allows automated tests to be run without system-wide install.",
+        "cakephp/cakephp-codesniffer": "Allows to check the code against the coding standards used in CakePHP."
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Test\\": "tests",
+            "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": "App\\Console\\Installer::postInstall",
+        "post-create-project-cmd": "App\\Console\\Installer::postInstall",
+        "post-autoload-dump": "Cake\\Composer\\Installer\\PluginInstaller::postAutoloadDump",
+        "check": [
+            "@test",
+            "@cs-check"
+        ],
+        "cs-check": "vendor/bin/phpcs --colors -p --standard=vendor/cakephp/cakephp-codesniffer/CakePHP ./src ./tests",
+        "cs-fix": "vendor/bin/phpcbf --colors --standard=vendor/cakephp/cakephp-codesniffer/CakePHP ./src ./tests",
+        "test": "vendor/bin/phpunit --colors=always"
+    },
+    "minimum-stability": "beta",
+    "prefer-stable": true
+}

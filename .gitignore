@@ -1,0 +1,14 @@
+/vendor/*
+/tmp/*
+/logs/*
+/nbproject/*
+/webroot/upload/*
+/secupload/*
+/config/app.php
+/config/.env
+/cache/*
+/webroot/admin_l_t_e
+/webroot/utility
+/config/Migrations/schema-dump-migrate.lock
+/config/Migrations/schema-dump-default.lock 
+/.vscode/*
